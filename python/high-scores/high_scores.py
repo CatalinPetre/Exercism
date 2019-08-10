@@ -11,17 +11,10 @@ class HighScores(object):
     def personal_top_three(self):
         max_scores = []
         i = 0
-        while i < 2:
+        length = len(self.scores)
+        while i < length and i < 3:
             maxim = max(self.scores)
-            element = self.scores.remove(maxim)
-            max_scores = max_scores + element
+            self.scores.remove(maxim)
+            max_scores.append(maxim)
+            i = i + 1
         return max_scores
-
-
-   # def __repr__(self):
-        # return self.scores    
-# player_1 = HighScores()
-# Cat = HighScores([1, 2, 10, 3])
-# Cat.highest_score()
-# Cat.latest()
-# print("???")
