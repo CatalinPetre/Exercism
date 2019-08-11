@@ -1,16 +1,14 @@
-class HighScores(object):
-    def __init__(self, scores):
-        self.scores = scores
+def personal_best(scores):
+    return max(scores)
 
-    def personal_best(self):
-        return max(self.scores)
 
-    def latest(self):
-        return self.scores[-1]
+def latest(scores):
+    return scores[-1]
 
-    def personal_top_three(self):
-        self.scores.sort(reverse = True)
-        if len(self.scores) < 3:
-            return self.scores
-        else:
-            return self.scores[0:3]
+
+def personal_top_three(scores):
+    scores.sort(reverse=True)
+    if len(scores) < 3:
+        return scores
+    else:
+        return scores[0:3]
