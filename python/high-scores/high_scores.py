@@ -9,12 +9,8 @@ class HighScores(object):
         return self.scores[-1]
 
     def personal_top_three(self):
-        max_scores = []
-        i = 0
-        length = len(self.scores)
-        while i < length and i < 3:
-            maxim = max(self.scores)
-            self.scores.remove(maxim)
-            max_scores.append(maxim)
-            i = i + 1
-        return max_scores
+        self.scores.sort(reverse = True)
+        if len(self.scores) < 3:
+            return self.scores
+        else:
+            return self.scores[0:3]
