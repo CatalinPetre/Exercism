@@ -8,7 +8,4 @@ def latest(scores):
 
 def personal_top_three(scores):
     scores.sort(reverse=True)
-    if len(scores) < 3:
-        return scores
-    else:
-        return scores[0:3]
+    return scores[0:3]
